@@ -13,7 +13,7 @@ under the following rules; you may:
 
 1. fill a jug completely, making its current amount equal to its capacity
 2. spill a jug completely, making its current amount equal to zero
-3. fill one jug from another, either filling the destination, emptying the source, or both
+3. pour into a jug from another, either filling the destination, emptying the source, or both
 
 One solution is to
 
@@ -28,9 +28,10 @@ I believe there are 3 more.
 
 "Die Harder" is the following:
 
-Given `n` empty jugs with non-zero, not-necessarily unique capacities
-`c[0], c[1], ..., c[n-1]`, deliver exactly `k` gallons of water, which
-may be spread out over multiple jugs, under the same rules as above.
+Given an ordered collection of `n` empty jugs with non-zero,
+not-necessarily unique capacities `c[0], c[1], ..., c[n-1]`, deliver
+exactly `k` gallons of water, which may be spread out over multiple
+jugs, under the same rules as above.
 
 ***THE CHALLENGE***
 
@@ -41,7 +42,13 @@ algorithm becomes intolerably slow when the number of jugs > 3)
 
 B: clarity (no obfuscators; we want to see your algorithm)
 
-C: brevity
+C: elegance
+
+D: brevity
+
+The above expresses the priority of the judging criteria: perf is more
+important that clarity, which is more important than elegance, which is
+more important than brevity.
 
 Your code should behave as follows:
 
@@ -64,18 +71,13 @@ Clojure syntax, which is a solution for `n = 2`, `capacities = [3 5]`,
        (fill-jug 0) ] } )
 
 Each of your `t` solutions must present the final states of the jugs and
-a sequence of instructions that achieve the solution. Minor variations
-to the above format are ok.
+a sequence of moves, in order, that achieve the solution. Minor
+variations to the above format are ok.
 
 Extra credit if your code produces optimal (shortest number of moves,
 fewest pours, etc.) solutions and you can prove so. You may present
 proofs in commentary with your code; acceptance of a proof is at our
-sole discretion.
-
-You might unit-test your code on inputs like the following:
-
-    capacities = [3 5 7],    k = any integer from 0 through 15
-    capacities = [3 5 7 11], k = any integer from 0 through 26
+sole discretion, as is judgment of clarity and elegance.
 
 Include instructions for running your code if it's non-obvious (as in,
 "how exactly do I run this bit of INTERCAL?").
@@ -96,6 +98,11 @@ Certain moves, while legal, are trivial, namely:
 
 In your golf, you may either check for these trivial moves or not.
 
+You might unit-test your code on inputs like the following:
+
+    capacities = [3 5 7],    k = any integer from 0 through 15
+    capacities = [3 5 7 11], k = any integer from 0 through 26
+
 ***A REFERENCE SOLUTION***
 
 You can find a [reference solution in Clojure here][3]. It includes unit
@@ -104,7 +111,7 @@ tests that demonstrate the program at work.
   [1]: http://research.microsoft.com/en-us/news/features/lamport-031814.aspx
   [2]:
   http://research.microsoft.com/en-us/um/people/lamport/tla/hyperbook.html
-  [3]: https://github.com/rebcabin/ClojureProjects/tree/golf/die-harder
+  [3]: https://github.com/rebcabin/codeGolf/tree/master/die-harder
 
 ## License
 
